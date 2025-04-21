@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>综合网页设计 - 严格按需求实现</title>
+    <style>
+        /* 全局基础样式 */
+        body {
+            font-family: Arial, "Microsoft YaHei", sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #333;
+        }
+        
+        /* 任务1：定位展示知识点视图 */
+        .task1 {
+            margin-bottom: 50px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        .knowledge-container {
+            position: relative;
+            height: 500px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        
+        .center-icon {
+            position: relative;
+            width: 150px;
+            height: 150px;
+            margin: 0 auto;
+            top: 175px;
+            background-image: url('https://via.placeholder.com/150x150/4CAF50/FFFFFF?text=中心图标');
+            background-size: cover;
+            border-radius: 50%;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        
+        .knowledge-box {
+            position: absolute;
+            width: 220px;
+            background-color: white;
+            border-radius: 5px;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 2;
+        }
+        
+        .box1 {
+            top: 50px;
+            left: 50px;
+        }
+        
+        .box2 {
+            top: 50px;
+            right: 50px;
+        }
+        
+        .box3 {
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .knowledge-box h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: #333;
+            font-size: 18px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+        }
+        
+        .knowledge-box ul {
+            padding-left: 20px;
+        }
+        
+        .knowledge-box li {
+            margin-bottom: 8px;
+            list-style-type: disc;
+            color: #555;
+        }
+        
+        /* 任务2：新闻资讯网页 */
+        .task2 {
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        
+        .news-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .news-header h2 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        hr {
+            border: 0;
+            height: 1px;
+            background-color: #ddd;
+            margin-bottom: 30px;
+        }
+        
+        .news-content {
+            display: flex;
+            gap: 30px;
+        }
+        
+        .main-news {
+            flex: 2;
+        }
+        
+        .sidebar-news {
+            flex: 1;
+        }
+        
+        .news-item {
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .news-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .news-item h4 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            color: #333;
+            font-size: 18px;
+        }
+        
+        .news-images {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .news-images img {
+            width: 50%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+        
+        .author-info {
+            font-size: 14px;
+            color: #777;
+        }
+        
+        .hot-news-item {
+            margin-bottom: 20px;
+        }
+        
+        .hot-news-item a {
+            display: block;
+            color: #2196F3;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .hot-news-item a:hover {
+            text-decoration: underline;
+        }
+        
+        .hot-news-item img {
+            width: 100%;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>综合网页设计</h1>
+        
+        <!-- 任务1：定位展示知识点视图 -->
+        <div class="task1">
+            <h2>任务1：定位展示知识点视图</h2>
+            <div class="knowledge-container">
+                <div class="center-icon"></div>
+                
+                <div class="knowledge-box box1">
+                    <h3>HTML知识点</h3>
+                    <ul>
+                        <li>HTML文档结构</li>
+                        <li>常用标签使用</li>
+                        <li>表单元素</li>
+                        <li>语义化标签</li>
+                        <li>SEO基础</li>
+                    </ul>
+                </div>
+                
+                <div class="knowledge-box box2">
+                    <h3>CSS知识点</h3>
+                    <ul>
+                        <li>选择器优先级</li>
+                        <li>盒模型</li>
+                        <li>Flex布局</li>
+                        <li>Grid布局</li>
+                        <li>动画效果</li>
+                    </ul>
+                </div>
+                
+                <div class="knowledge-box box3">
+                    <h3>JavaScript知识点</h3>
+                    <ul>
+                        <li>DOM操作</li>
+                        <li>事件处理</li>
+                        <li>AJAX请求</li>
+                        <li>ES6特性</li>
+                        <li>闭包与作用域</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 任务2：新闻资讯网页 -->
+        <div class="task2">
+            <h2>任务2：新闻资讯网页</h2>
+            <div class="news-header">
+                <h2>最新新闻资讯</h2>
+                <hr>
+            </div>
+            
+            <div class="news-content">
+                <div class="main-news">
+                    <div class="news-item">
+                        <h4>人工智能在医疗领域的应用取得突破性进展</h4>
+                        <div class="news-images">
+                            <img src="1.jpeg" alt="新闻图片1">
+                            <img src="2.png" alt="新闻图片2">
+                        </div>
+                        <p class="author-info">作者：张教授 | 发布时间：2023-06-18 | 阅读量：1.2万</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <h4>量子计算机研发进入新阶段，性能提升显著</h4>
+                        <div class="news-images">
+                            <img src="3.png" alt="新闻图片3">
+                            <img src="4.png" alt="新闻图片4">
+                        </div>
+                        <p class="author-info">作者：李研究员 | 发布时间：2023-06-17 | 阅读量：9800</p>
+                    </div>
+                    
+                    <div class="news-item">
+                        <h4>新型太阳能电池效率突破30%，商业化前景广阔</h4>
+                        <div class="news-images">
+                            <img src="5.jpg" alt="新闻图片5">
+                            <img src="6.jpg" alt="新闻图片6">
+                        </div>
+                        <p class="author-info">作者：王工程师 | 发布时间：2023-06-16 | 阅读量：1.5万</p>
+                    </div>
+                </div>
+                
+                <div class="sidebar-news">
+                    <div class="hot-news-item">
+                        <a href="#">5G技术如何改变我们的生活方式？</a>
+                        <img src="1.jpg" alt="热点新闻1">
+                    </div>
+                    
+                    <div class="hot-news-item">
+                        <a href="#">元宇宙概念解析与未来发展趋势</a>
+                        <img src="8.jpg" alt="热点新闻2">
+                    </div>
+                    
+                    <div class="hot-news-item">
+                        <a href="#">区块链技术在金融领域的创新应用</a>
+                        <img src="9.png" alt="热点新闻3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
